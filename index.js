@@ -26,5 +26,4 @@ app.get('/products/:productId',(req,res)=>{
     res.send('GET product  ID: '+req.params.productId)
 })
 
-
 app.listen(3000)
