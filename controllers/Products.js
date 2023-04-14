@@ -3,7 +3,7 @@ const Products = require('../models/Products')
 // curl --location -X GET 'localhost:3000/products' 
 const index = (req,res)=>{
     const products = Products.all()
-    res.render('views/products/index', { products })
+    res.render('products/index', { products })
     // res.json(products)
 }
 
