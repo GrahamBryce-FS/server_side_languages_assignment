@@ -1,38 +1,43 @@
 const Products = require('../models/Products')
 
-// curl --location -X GET 'localhost:3000/products' 
+
 const index = (req,res)=>{
     const products = Products.all()
-    res.render('products/index', { products })
+    res.render('views/products/index', { products })
     // res.json(products)
 }
 
 const form = (req,res) => {
-    res.send('Product.form')
+    if(req.params.id){
+        const product = Products.find(req.params.id)
+        res.render('views/products/edit', { product })
+    } else {
+        res.render('views/products/create')
+    }
 }
 
-// curl --location -X GET 'localhost:3000/products/1'
 const show = (req,res) => {
     const product = Products.find(req.params.id)
-    res.json(product)
+    // res.json(product)
+    res.render('views/products/show', { product })
 }
 
-// curl -X POST --data "id=2&slug=nike-test&name=Nike Shoe test create" localhost:3000/products
 const create = (req,res) => {
     const product = Products.create(req.body)
-    res.json(product)
+    // res.json(product)
+    res.redirect('/products/'+product.id)
 }
 
-// curl -X POST --data "id=1&slug=nike-shoe&name=Nike Shoe updated" localhost:3000/products/1 
 const update = (req,res) => {
+    console.log(req.body);
     const product = Products.update(req.params.id, req.body)
-    res.json(product)
+    // res.json(product)
+    res.redirect('/products/'+req.params.id)
 }
 
-// curl -X DELETE localhost:3000/products/1  
 const remove = (req,res) => {
-    const product = Products.remove(req.params.id)
-    res.json(product)
+    const products = Products.remove(req.params.id)
+    res.redirect('/products')
 }
 
 module.exports = { index, form, show, create, update, remove }
