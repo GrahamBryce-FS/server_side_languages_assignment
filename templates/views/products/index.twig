@@ -5,13 +5,13 @@
     <ul>
         {% for product in products %}
         <li>
-            {{ product.name }} - 
+            {{ product.name }} - ${{ product.price }}
             <a href="/products/{{ product.id }}">Edit</a> 
             <a href="/products/{{ product.id }}/delete">Delete</a>
-
         </li>
         {% endfor %}
     </ul>
     <a href="/products/new">Create new shoe</a>
 
 {% endblock %}
+{# i have to add a show for the price amount on the main page somehow #}

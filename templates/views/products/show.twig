@@ -9,8 +9,12 @@
         <li>
             <label>Name: </label> {{ product.name }}
         </li>
+        <li>
+            <label>Price: $</label>{{ product.price }}
+        </li>
     </ul>
     <p>
-        <a href="/products/{{ product.id }}/edit">Edit</a> | <a href="/products/{{ product.id }}/delete">Delete</a>
+        <a href="/products/{{ product.id }}/edit">Edit</a> | 
+        <a href="/products/{{ product.id }}/delete">Delete</a>
     </p>
 {% endblock %}
