@@ -17,4 +17,4 @@ app.get('/', (req,res)=>{
 
 app.use('/products',productRouter)
 
-app.listen(4000)
+app.listen(3000)
