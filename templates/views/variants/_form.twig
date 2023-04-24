@@ -1,0 +1,41 @@
+<form method="POST" action="/variants/{% if variant.id %}{{ variant.id }}{% endif %}">
+    {% if variant.id %}
+        <input type='hidden' name="id" value="{{ variant.id }}"/>
+    {% endif %}
+    <div>
+        <label for="title">Variant:</label>
+        <input type="text" name="title" id="title" value="{{ variant.title }}"/>
+    </div>
+    <div>
+        <label>Product:</label>
+        <select name="productId">
+            {% for product in products %}
+                <option 
+                    value="{{ product.id }}"
+                    {% if product.id == variant.productId %}selected="selected"{% endif %}
+                >
+                    {{ product.title }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="slug">slug:</label>
+        <br/>
+        <input type="text" name="slug" id="name" value="{{ variant.slug }}"/>
+    </div>
+    <div>
+        <label for="inventory">Inventory:</label>
+        <br/>
+        <input type="text" name="inventory" id="name" value="{{ variant.inventory }}"/>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <br/>
+        <textarea type="text" name="description" id="name" value="{{ variant.description }}"></textarea>
+    </div>
+    <div>
+        <input type="submit" name="submit" />
+    </div>
+</form>
+
