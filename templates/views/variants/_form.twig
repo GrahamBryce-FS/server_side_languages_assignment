@@ -3,7 +3,7 @@
         <input type='hidden' name="id" value="{{ variant.id }}"/>
     {% endif %}
     <div>
-        <label for="title">Title:</label>
+        <label for="title">Variant:</label>
         <input type="text" name="title" id="title" value="{{ variant.title }}"/>
     </div>
     <div>
@@ -19,11 +19,23 @@
             {% endfor %}
         </select>
     </div>
-    {# <div>
-        <label for="price">Price:</label>
-        <input type="text" name="price" id="name" value="{{ variant.price }}"/>
-    </div> #}
+    <div>
+        <label for="slug">slug:</label>
+        <br/>
+        <input type="text" name="slug" id="name" value="{{ variant.slug }}"/>
+    </div>
+    <div>
+        <label for="inventory">Inventory:</label>
+        <br/>
+        <input type="text" name="inventory" id="name" value="{{ variant.inventory }}"/>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <br/>
+        <textarea type="text" name="description" id="name" value="{{ variant.description }}"></textarea>
+    </div>
     <div>
         <input type="submit" name="submit" />
     </div>
 </form>
+

@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   // slug needs to be a string and its part of the URL 
   Product.init({
     title: DataTypes.STRING,
-    price: DataTypes.INTEGER
+    price: DataTypes.INTEGER,
+    slug: DataTypes.STRING,
+    description: DataTypes.STRING,
+    is_published: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Product',

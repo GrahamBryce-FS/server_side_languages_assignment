@@ -12,6 +12,14 @@
         <li>
             <label>Price: $</label>{{ product.price }}
         </li>
+        <br>
+        <li>
+            <label>Description: </label>{{ product.description }}
+        </li>
+        <br>
+        <li>
+            <label>is Published: </label>{{ product.is_published }}
+        </li>
     </ul>
     <p>
         <a href="/products/{{ product.id }}/edit">Edit</a> | 

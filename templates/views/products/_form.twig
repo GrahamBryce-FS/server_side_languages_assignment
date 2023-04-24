@@ -4,12 +4,34 @@
     {% endif %}
     <div>
         <label for="title">Name:</label>
+        <br/>
         <input type="text" name="title" id="title" value="{{ product.title }}"/>
     </div>
 
     <div>
         <label for="price">Price:</label>
+        <br/>
         <input type="text" name="price" id="name" value="{{ product.price }}"/>
+    </div>
+    <div>
+        <label for="slug">slug:</label>
+        <br/>
+        <input type="text" name="slug" id="name" value="{{ product.slug }}"/>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <br/>
+        <textarea type="text" name="description" id="name" value="{{ product.description }}"></textarea>
+    </div>
+    <div>
+
+        <label for="publish">published</label><br>
+            <select name="is_published" id="">
+                <option value="1" {{ product.is_published ? "selected" }}>plublished</option>
+                <option value="0" {{  product.is_published ? "":"selected" }}>unpublished</option>
+            {# {% if products.is_published = 1{ selected } %} #}
+            {# {{ products.is_published ? "selected" }} #}
+            </select>
     </div>
     <div>
         <input type="submit" name="submit" />
