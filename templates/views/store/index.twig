@@ -1,0 +1,32 @@
+{% extends 'layouts/base.twig' %}
+
+{% block main_content %}
+    <h2>All Products:</h2>
+    <ul>
+    {% for product in products %}
+            <li>
+                {{ product.title }} - ${{ product.price }} 
+                <a href="/products/{{ product.id }}">Edit</a> 
+                <a href="/products/{{ product.id }}/delete">Delete</a>
+<a href="/store/products/{{ product.slug }}">view</a> 
+                <ul>
+                {% for variant in product.Variants %}
+                    {# <li>Inventory: {{ variant.inventory }}</li> #}
+                
+                			                {% set loopIndex = loop.index %}
+			                    		{% for image in variant.Images %}
+			                    			<div class="col-3"><img class="img-fluid pic-{{ loopIndex }}" src="/public/images/{{ image.id }}{{ image.extension }}"></div>
+			                    		{% endfor %}	
+                
+                
+                {% endfor %}
+                
+
+
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/products/new">Create new Product</a>
+
+{% endblock %}

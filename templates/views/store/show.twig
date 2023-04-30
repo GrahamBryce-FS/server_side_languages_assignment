@@ -1,0 +1,60 @@
+{% extends 'layouts/base.twig' %}
+
+{% block main_content %}
+    {# <h2>About {{ product.title }} </h2>
+    <ul>
+        <li>
+            <label>ID: </label> {{ product.id }}
+        </li>
+        <li>
+            <label>Name: </label> {{ product.title }}
+        </li>
+        <li>
+            <label>Price: $</label>{{ product.price }}
+        </li>
+        <li>
+            <label>Is Published: </label>{{ product.is_published }}
+        </li>
+        <li>
+            <label>Description: </label>{{ product.description }}
+        </li>
+    </ul>
+    <p>
+        <a href="/products/{{ product.id }}/edit">Edit</a> | 
+        <a href="/products/{{ product.id }}/delete">Delete</a>
+    </p> #}
+
+
+    <h2>All Products:</h2>
+    <ul>
+    
+            <li>
+                {{ product.title }} - ${{ product.price }} 
+
+                <ul>
+                {% for variant in product.Variants %}
+                    
+                
+                			                {% set loopIndex = loop.index %}
+			                    		{% for image in variant.Images %}
+			                    			<div class="col-3"><img class="img-fluid pic-{{ loopIndex }}" src="/public/images/{{ image.id }}{{ image.extension }}"></div>
+			                    		{% endfor %}	
+                
+                
+                {% endfor %}
+                <li>Inventory: {{ variant.inventory }}</li>
+                <li>description: {{ variant.description }}</li>
+                {% for option in product.Variants %}
+									{% if option.id == variant.id %}
+										{{ option.title }}
+									{% else %}
+										<a href="/store/products/{{ product.slug }}?v={{ option.slug }}">{{ option.title }}</a>
+									{% endif %}
+								{% endfor %}
+
+
+                </ul>
+            </li>
+    </ul>
+
+{% endblock %}

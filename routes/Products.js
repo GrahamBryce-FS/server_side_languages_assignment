@@ -11,5 +11,5 @@ router.post('/:id', productCtrl.update)
 router.delete('/:id', productCtrl.remove)
 router.get('/:id/delete', productCtrl.remove)
 
-
+console.log("apple");
 module.exports = router

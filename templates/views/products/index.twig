@@ -8,7 +8,7 @@
                 {{ product.title }} - ${{ product.price }} 
                 <a href="/products/{{ product.id }}">Edit</a> 
                 <a href="/products/{{ product.id }}/delete">Delete</a>
-
+<a href="/products/{{ product.slug }}">view</a> 
                 <ul>
                 {% for variant in product.Variants %}
                     <li>Inventory: {{ variant.inventory }}</li>
