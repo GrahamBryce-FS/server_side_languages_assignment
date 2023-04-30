@@ -2,12 +2,17 @@
 
 {% block main_content %}
 
-    <h1>Manage</h1>
+    
+    <h1>E-Commerce DEMO </h1>
     <nav>
         <ul>
-            <li><a href="/products">Products</a></li>
+
+        {% for product in products %}
+            <h1>{{ product.title }}</h1>
+            {# <li><img src="/public/images/{{ image.id }}{{ image.extension }}"></li> #}
+            {# <li><img src="/public/images/1.png"></li> #}
+        {% endfor %}
             <li><a href="/variants">variants</a></li>
-            <li><a href="/images">Images</a></li>
         </ul>
     </nav>
 

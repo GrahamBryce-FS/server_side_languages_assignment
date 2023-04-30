@@ -1,8 +1,15 @@
-const { Product } = require('../models')
+const { Product, Variant, Image } = require('../models')
 
 
 const index = async (req,res)=>{
-    const products = await Product.findAll()
+//     const products = await Product.findAll({
+//         include: Variant
+// })
+const products = await Product.findAll({
+    include: [
+        { model: Variant, include: [Image] }
+    ]
+})
     res.render('views/products/index', { products })
     // res.json(products)
 }

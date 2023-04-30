@@ -12,9 +12,19 @@
         <li>
             <label>Product: </label> {{ product.title }}
         </li>
-        {# <li>
-            <label>Price: $</label>{{ variant.price }}
-        </li> #}
+        <li>
+            <label>Price: $</label>{{ product.price }}
+        </li>
+        <li>
+            <label>Description: </label>{{ variant.description }}
+        </li>
+        <br>
+        <li>
+            <label>Inventory: </label>{{ variant.inventory}}
+        </li>
+        <li>
+            <label>Slug: </label>{{ variant.slug }}
+        </li>
     </ul>
     <p>
         <a href="/variants/{{ variant.id }}/edit">Edit</a> | 

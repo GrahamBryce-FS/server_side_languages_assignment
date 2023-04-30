@@ -5,8 +5,8 @@
     <ul>
         {% for variant in variants %}
         <li>
-            {{ variant.title }} - 
-            {# ${{ variant.price }} #}
+            {{ variant.title }} 
+            {# - ${{ product.price }} #}
             <a href="/variants/{{ variant.id }}">Edit</a> 
             <a href="/variants/{{ variant.id }}/delete">Delete</a>
         </li>
