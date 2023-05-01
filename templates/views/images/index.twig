@@ -6,7 +6,6 @@
         {% for image in images %}
         <li>
             {{ image.id }} - 
-            {# ${{ product.price }} #}
             <a href="/images/{{ image.id }}">Edit</a> 
             <a href="/images/{{ image.id }}/delete">Delete</a>
         </li>
