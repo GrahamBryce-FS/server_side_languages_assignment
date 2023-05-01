@@ -16,11 +16,13 @@
 						<img src="/public/images/{{ image.id }}{{ image.extension }}" role="button" class="col-1 ">
 					{% endfor %}
 				</div>
+                
                 {% if variant.inventory > 10 %}
                     <li>In stock!</li>
                 {% else %}
                     <li>Out of stock</li>
                 {% endif %}
+
                 <li>Description: {{ variant.description }}</li>
                 {% for option in product.Variants %}
 				{% if option.id == variant.id %}
